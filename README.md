@@ -10,9 +10,9 @@ Please that the job information displayed on the right hand side of the app are 
 <br/>
 <br/>
 <img src="https://raw.githubusercontent.com/gabtam55/Practices/master/300820%20-%20Hong%20Kong%20Collision%20Data%20Wireframe/Shinydashboard%20Wireframe%20300820.png" alt="HKColShinydashboardpng" width="500" />
-<br/r>
-<br/r>
-<p style="text-align: center"><a href="https://services.onetcenter.org/" title="This shiny app incorporates information from O*NET Web Services. Click to learn more."><img src="https://www.onetcenter.org/image/link/onet-in-it.svg" style="width: 130px; height: 60px; border: none" alt="O*NET in-it"></a></p>
+<br/>
+<br/>
+<p style="text-align: center"><a href="https://services.onetcenter.org/" title="This shiny app incorporates information from O*NET Web Services. Click to learn more."></a></p>
 <p>This shiny app incorporates information from <a href="https://services.onetcenter.org/">O*NET Web Services</a> by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). O*NET&reg; is a trademark of USDOL/ETA.</p>
 
 
