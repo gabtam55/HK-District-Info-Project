@@ -2,7 +2,7 @@
 A place for my R learnings using open data and participating in the <a href="https://github.com/Hong-Kong-Districts-Info">Hong Kong Districts Info Project</a>.
 
 ## 2nd October 2020 - Job Description Generator (shiny interactive form)
-The idea of this app is to speed up the job description creation process by providing the user with some standard job information pulled from the O*NET to start with. The job information displayed on the right hand side of the app are editable, which allows users to customise them accordingly. An export feature is yet to be built to allow the edited job information to be downloaded.
+The idea of this app is to speed up the job description creation process by providing the user with standard job information pulled from the O*NET to start with. The job information displayed on the right hand side of the app are editable, which allows users to customise them accordingly. An export feature is yet to be built to allow the edited job information to be downloaded.
 <br/>
 <br/>
 <a href="https://hfigabriel.shinyapps.io/job_profile/?_ga=2.71492179.1301702451.1601633849-849884923.1596283104">Link</a> to shiny app
