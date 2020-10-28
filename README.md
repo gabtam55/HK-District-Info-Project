@@ -11,7 +11,7 @@ The idea of this app is to speed up the job description creation process by prov
 <a href="https://hfigabriel.shinyapps.io/job_profile/?_ga=2.71492179.1301702451.1601633849-849884923.1596283104">Link</a> to shiny app
 <br/>
 <br/>
-<img src="https://github.com/gabtam55/Practices/blob/master/021020%20-%20Job%20Description%20Generator/Job%20Description%20Generator.png" alt="JDGeneratorpng" width="500" />
+<img src="https://github.com/gabtam55/Practices/blob/master/021020%20-%20Job%20Description%20Generator/Job%20Description%20Generator.png?raw=true" alt="JDGeneratorpng" width="500" />
 <p style="text-align: center"><a href="https://services.onetcenter.org/" title="This shiny app incorporates information from O*NET Web Services. Click to learn more."></a></p>
 <p>This shiny app incorporates information from <a href="https://services.onetcenter.org/">O*NET Web Services</a> by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). O*NET&reg; is a trademark of USDOL/ETA.</p>
 
