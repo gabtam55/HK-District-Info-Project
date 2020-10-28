@@ -1,6 +1,9 @@
 # Practices
 A place for my R learnings using open data and participating in the <a href="https://github.com/Hong-Kong-Districts-Info">Hong Kong Districts Info Project</a>.
 
+## 28th October 2020 - Hypothesis Testing On A Single Proportion (Using {infer})
+<img src="https://raw.githubusercontent.com/gabtam55/Practices/master/300820%20-%20Hong%20Kong%20Collision%20Data%20Wireframe/Shinydashboard%20Wireframe%20300820.png" alt="HKColShinydashboardpng" width="500" />
+
 ## 2nd October 2020 - Job Description Generator (shiny interactive form)
 The idea of this app is to speed up the job description creation process by providing the user with standard job information pulled from the O*NET to start with. The job information displayed on the right hand side of the app are editable, which allows users to customise them accordingly. An export feature is yet to be built to allow the edited job information to be downloaded.
 <br/>
