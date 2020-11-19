@@ -10,7 +10,7 @@ First of all, we explore that data a bar plots. The biggest supporter for the de
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
 
 To find out whether this relationship happened by chance, we perform the chi-squared test using the computational approach. See extract of code below.
-
+<img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/code.png?raw=true" alt="Code" height="350" />
 
 
 ## 28th October 2020 - Hypothesis Testing On A Single Proportion (Using {infer})
