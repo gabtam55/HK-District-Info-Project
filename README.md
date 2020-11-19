@@ -6,10 +6,10 @@ A place for my R learnings using open data and participating in the <a href="htt
 
 Using the results from the GSS conducted since 2000, we would like to look at the relationship between socioeconomic class and political party affiliation.
 
-First of all, we can explore the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that there is a relationship between socioeconomical class and political party affiliation.
+First of all, we can explore the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that a relationship exists between socioeconomic class and political party affiliation.
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
 
-To find out whether this relationship happened by chance, we can perform a chi-squared test using the computational approach (see extract of code below). Our hypothesis are:
+To find out whether this relationship happened by chance, we can perform a chi-squared test using the computational approach (see extract of code below). Our hypotheses are:
 * Null hypothesis: The socioeconomic class of US residents is independent of their political party affiliations.
 * Alternative hypothesis: The socioeconomic class of US residents is dependent on their political party affiliations.
 
