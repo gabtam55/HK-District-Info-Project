@@ -6,19 +6,19 @@ A place for my R learnings using open data and participating in the <a href="htt
 
 Using the results from the GSS conducted since 2000, we would like to look at the relationship between socioeconomic class and political party affiliation.
 
-First of all, we explore that data a bar plots. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that there is a relationship between socioeconomical class and political party affiliation.
+First of all, we can explore the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that there is a relationship between socioeconomical class and political party affiliation.
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
 
-To find out whether this relationship happened by chance, we perform the chi-squared test using the computational approach. See extract of code below. The hypothesis are:
->Null hypothesis: The socioeconomic class of US residents is independent of their political party affiliations.
-Alternative hypothesis: The socioeconomic class of US residents is dependent on their political party affiliations.
+To find out whether this relationship happened by chance, we can perform a chi-squared test using the computational approach (see extract of code below). Our hypothesis are:
+* Null hypothesis: The socioeconomic class of US residents is independent of their political party affiliations.
+* Alternative hypothesis: The socioeconomic class of US residents is dependent on their political party affiliations.
 
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/code.png?raw=true" alt="Code" height="350" />
 
-Results indicated a p-value of 0.016. The density plot below show the proportion of chi-squares from the null distribution that are bigger than the observed chi-square.
+The results indicated a p-value of 0.016. The density plot below shows the proportion of chi-squares from the null distribution that are larger than the observed chi-square (where the red line is).
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Null%20distribution%20of%20chi-squared%20distances.png?raw=true" alt="null distribution" height="350" />
 
-Since p-value is smaller than 0.05, we reject the null hypothesis and are in favor of the alternative hypothesis that socioeconomic class of US residents is dependent on their political party affiliations.
+As p-value is smaller than 0.05, we reject the null hypothesis. We are in favor of the alternative hypothesis that socioeconomic class of US residents is dependent on their political party affiliations.
 
 ## 28th October 2020 - Hypothesis Testing On A Single Proportion (Using {infer})
 <img src="https://github.com/gabtam55/Practices/blob/master/281020%20-%20Hypothesis%20Testing%20(Single%20Proportion)/code.png?raw=true" alt="HypoTestOneProp" height="500" />
