@@ -4,9 +4,14 @@ A place for my R learnings using open data and participating in the <a href="htt
 ## 18th November 2020 - Hypothesis Testing Using Chi-squared Test (Using {infer})
 >The General Social Survey (GSS) is a sociological survey created and regularly collected since 1972 by the National Opinion Research Center at the University of Chicago. It is funded by the National Science Foundation. The GSS collects information and keeps a historical record of the concerns, experiences, attitudes, and practices of residents of the United States. (<a href="https://en.wikipedia.org/wiki/General_Social_Survey">Wikipedia, 2020</a>)
 
-Using the results from the GSS, I would like to look at the relationship between socioeconomic class and political party affiliation.
-First of all, we explore that data with a bar plots.
+Using the results from the GSS conducted since 2000, we would like to look at the relationship between socioeconomic class and political party affiliation.
+
+First of all, we explore that data a bar plots. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that there is a relationship between socioeconomical class and political party affiliation.
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
+
+To find out whether this relationship happened by chance, we perform the chi-squared test using the computational approach. See extract of code below.
+
+
 
 ## 28th October 2020 - Hypothesis Testing On A Single Proportion (Using {infer})
 <img src="https://github.com/gabtam55/Practices/blob/master/281020%20-%20Hypothesis%20Testing%20(Single%20Proportion)/code.png?raw=true" alt="HypoTestOneProp" height="500" />
