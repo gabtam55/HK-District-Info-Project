@@ -38,24 +38,24 @@ null_distribution_t %>%
 ```
 <img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_distribution_t2.png" alt="Null t-distribution" height="350" />
 
-As the p-value is smaller than 0.05, I failed to reject the null hypothesis. Afterall, which hand people use their smartphones with didn't seem to have an impact on their levels of extraversion (or the other way round).
+As the p-value was smaller than 0.05, I failed to reject the null hypothesis. Afterall, the hand people use their smartphones with didn't seem to have an impact on their levels of extraversion (or the other way round).
 
 ### One-way ANOVA
-I however didn't want to give up just yet. Therefore, I tweaked my question to the following while keeping my hypotheses the same.
+I didn't want to give up just yet. Therefore, I tweaked my question to the following while keeping my hypotheses the same.
 >Does people's levels of extroversion depend on the hand (e.g. left hand, right hand, two hands) they use their smartphones with?
 
-This time, a one-way ANOVA was conducted to answered my research question, looking at the difference in mean extraversion scores between people who use their smartphones with left hand, right hand and two hands.
+This time, an one-way ANOVA was conducted to answer my question, looking at the difference in mean extraversion scores between people who use their smartphones with left hand, right hand and two hands.
 ```
 tidy(aov(Extraversion ~ X18..I.usually.use.my.smartphone.with, data = dsuq)) # p-value is 0.857
 ```
 
-A p-value of 0.857 suggested that there wasn't much point conducting a post-hoc analysis but I did it anyway. First, I used the Bonferroni correction to find out the appropriate significance level. This is to avoid inflating the type 1 error rate when running multiple two sample t-tests. The modified significant level was 0.017.
+A p-value of 0.857 suggested that there wasn't much point to conduct a post-hoc analysis but I did it anyway. First, I used the Bonferroni correction to find out the appropriate significance level. This was to avoid inflating the type 1 error rate when running multiple two sample t-tests. The modified significance level was 0.017.
 ```
 K <- length(unique(dsuq$X18..I.usually.use.my.smartphone.with)) *
   (length(unique(dsuq$X18..I.usually.use.my.smartphone.with)) - 1) /
   2
 
-bonferroni_corrected_sig_lv <- 0.05 / K
+bonferroni_corrected_sig_lv <- 0.05 / K # 0.017
 ```
 
 I then ran a pairwise comparison to look at the results of two sample t-tests for differences in each possible pair of groups. None of the p-values was smaller than 0.017.
@@ -63,7 +63,7 @@ I then ran a pairwise comparison to look at the results of two sample t-tests fo
 pairwise.t.test(dsuq$Extraversion, dsuq$X18..I.usually.use.my.smartphone.with, p.adjust.method = "none")
 ```
 
-As I failed to reject the null hypothesis. The one-way ANOVA suggested that people's preferred hand to use their smartphones with has nothing to do with their levels of extraversion.
+As I failed to reject the null hypothesis. The one-way ANOVA also suggested that people's preferred hand to use their smartphones with has nothing to do with their levels of extraversion.
 
 ### References
 Noë, B., Turner, L., Linden, D., Allen, S., Maio, G., Whitaker, R. (2017). Mood sampling on smartphones. [data collection]. UK Data Service. SN: 852732, http://doi.org/10.5255/UKDA-SN-852732
