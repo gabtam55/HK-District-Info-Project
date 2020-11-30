@@ -1,7 +1,7 @@
 # Practices
 A place for my R learnings using open data and participating in the <a href="https://github.com/Hong-Kong-Districts-Info">Hong Kong Districts Info Project</a>.
 
-## 18th November 2020 - Hypothesis Testing Using Chi-squared Test (Using {infer})
+## 18th November 2020 - Chi-squared Test (Using {infer})
 >The General Social Survey (GSS) is a sociological survey created and regularly collected since 1972 by the National Opinion Research Center at the University of Chicago. It is funded by the National Science Foundation. The GSS collects information and keeps a historical record of the concerns, experiences, attitudes, and practices of residents of the United States. (<a href="https://en.wikipedia.org/wiki/General_Social_Survey">Wikipedia, 2020</a>)
 
 Using the results from the GSS conducted since 2000, we would like to look at the relationship between socioeconomic class and political party affiliation.
