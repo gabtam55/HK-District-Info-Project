@@ -1,15 +1,53 @@
 # Practices
 A place for my R learnings using open data and participating in the <a href="https://github.com/Hong-Kong-Districts-Info">Hong Kong Districts Info Project</a>.
 
+## 30th November 2020 - T-test and ANOVA (Using {infer})
+In 2017, Beryl et al. publish the data they collected as part of their 'Mood sampling on smartphones' project. I would like to ask a silly question by looking at the responses on the Smartphone Use Questionnaire and the Big Five Inventory (BFI).
+
+So here is my question:
+>Does people's levels of extroversion depend on the hand (e.g. one hand, two hands) they use their smartphones with?
+
+My hypotheses are:
+* Null hypothesis: Individuals' extroversion is independent on the hand they use their smartphones with
+* Alternative hypothesis: Individuals' extroversion is dependent on the hand they use their smartphones with
+
+In order to answer this question, an independent sample t-test was conducted, looking at the difference in mean extraversion scores between people who use their smartphones with one hand and those with two hands. A computational approach was adopted using {infer}.
+
+First, I calculated the observed t-statistic, which is -0.388.
+```
+obs_t <- dsuq %>%
+  specify(Extraversion ~ X18_2groups) %>%
+  calculate(stat = "t", order = c("one hand", "two hands")) %>%
+  pull()
+```
+
+I then generated the null t-distribution for when the null hypothesis is true.
+```
+null_distribution_t <- dsuq %>%
+  specify(Extraversion ~ X18_2groups) %>%
+  hypothesise(null = "independence") %>%
+  generate(reps = 5000, type = "permute") %>%
+  calculate(stat = "t", order = c("one hand", "two hands"))
+```
+
+Finally, I calculated the p-value and visualised it under the null t-distribution.
+```
+null_distribution_t %>%
+  get_p_value(obs_stat = obs_t, direction = "both")
+```
+<img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_distribution_t.png" alt="Null T-Distribution" height="350" />
+
+As the p-value is smaller than 0.05, we fail to reject the null hypothesis. Afterall, which hand people use their smartphones with doesn't seem to have a relationship with their levels of extraversion.
+
 ## 18th November 2020 - Chi-squared Test (Using {infer})
 >The General Social Survey (GSS) is a sociological survey created and regularly collected since 1972 by the National Opinion Research Center at the University of Chicago. It is funded by the National Science Foundation. The GSS collects information and keeps a historical record of the concerns, experiences, attitudes, and practices of residents of the United States. (<a href="https://en.wikipedia.org/wiki/General_Social_Survey">Wikipedia, 2020</a>)
 
-Using the results from the GSS conducted since 2000, we would like to look at the relationship between socioeconomic class and political party affiliation.
+Using the results from the GSS conducted since 2000, I would like to look at the relationship between socioeconomic class and political party affiliation.
 
 First of all, we can explore the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that a relationship exists between socioeconomic class and political party affiliation.
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
 
-To find out whether this relationship happened by chance, we can perform a chi-squared test using the computational approach (see extract of code below). Our hypotheses are:
+To find out whether this relationship happened by chance, we can perform a chi-squared test using the computational approach (see extract of code below). My hypotheses are:
 * Null hypothesis: The socioeconomic class of US residents is independent of their political party affiliations.
 * Alternative hypothesis: The socioeconomic class of US residents is dependent on their political party affiliations.
 
