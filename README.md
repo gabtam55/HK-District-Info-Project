@@ -31,7 +31,7 @@ null_distribution_t <- dsuq %>%
   calculate(stat = "t", order = c("one hand", "two hands"))
 ```
 
-Finally, I calculated the p-value and visualised it under the null t-distribution.
+Finally, I calculated the p-value and visualised it under the null t-distribution. The area in red represents the p-value, whereas the red line is the observed t-statistic. 
 ```
 null_distribution_t %>%
   get_p_value(obs_stat = obs_t, direction = "both")
