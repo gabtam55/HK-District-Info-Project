@@ -36,19 +36,45 @@ Finally, I calculated the p-value and visualised it under the null t-distributio
 null_distribution_t %>%
   get_p_value(obs_stat = obs_t, direction = "both")
 ```
-<img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_distribution_t2.png" alt="Null T-distribution" height="350" />
+<img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_distribution_t2.png" alt="Null t-distribution" height="350" />
 
-As the p-value is smaller than 0.05, I failed to reject the null hypothesis. Afterall, which hand people use their smartphones with didn't seem to have an impact on their levels of extraversion.
+As the p-value is smaller than 0.05, I failed to reject the null hypothesis. Afterall, which hand people use their smartphones with didn't seem to have an impact on their levels of extraversion (or the other way round).
 
-### Independent sample t-test
-I don't wan
+### One-way ANOVA
+I however didn't want to give up just yet. Therefore, I tweaked my question to the following while keeping my hypotheses the same.
+>Does people's levels of extroversion depend on the hand (e.g. left hand, right hand, two hands) they use their smartphones with?
+
+This time, a one-way ANOVA was conducted to answered my research question, looking at the difference in mean extraversion scores between people who use their smartphones with left hand, right hand and two hands.
+```
+tidy(aov(Extraversion ~ X18..I.usually.use.my.smartphone.with, data = dsuq)) # p-value is 0.857
+```
+
+A p-value of 0.857 suggested that there wasn't much point conducting a post-hoc analysis but I did it anyway. First, I used the Bonferroni correction to find out the appropriate significance level. This is to avoid inflating the type 1 error rate when running multiple two sample t-tests. The modified significant level was 0.017.
+```
+K <- length(unique(dsuq$X18..I.usually.use.my.smartphone.with)) *
+  (length(unique(dsuq$X18..I.usually.use.my.smartphone.with)) - 1) /
+  2
+
+bonferroni_corrected_sig_lv <- 0.05 / K
+```
+
+I then ran a pairwise comparison to look at the results of two sample t-tests for differences in each possible pair of groups. None of the p-values was smaller than 0.017.
+```
+pairwise.t.test(dsuq$Extraversion, dsuq$X18..I.usually.use.my.smartphone.with, p.adjust.method = "none")
+```
+
+As I failed to reject the null hypothesis. The one-way ANOVA suggested that people's preferred hand to use their smartphones with has nothing to do with their levels of extraversion.
+
+### Link to the Beryl et al.'s study
+Noë, B., Turner, L., Linden, D., Allen, S., Maio, G., Whitaker, R. (2017). Mood sampling on smartphones. [data collection]. UK Data Service. SN: 852732, http://doi.org/10.5255/UKDA-SN-852732
+
 
 ## 18th November 2020 - Chi-squared Test (Using {infer})
 >The General Social Survey (GSS) is a sociological survey created and regularly collected since 1972 by the National Opinion Research Center at the University of Chicago. It is funded by the National Science Foundation. The GSS collects information and keeps a historical record of the concerns, experiences, attitudes, and practices of residents of the United States. (<a href="https://en.wikipedia.org/wiki/General_Social_Survey">Wikipedia, 2020</a>)
 
 Using the results from the GSS conducted since 2000, I wanted to look at the relationship between socioeconomic class and political party affiliation.
 
-First of all, I explored the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seemed to suggest that a relationship exists between socioeconomic class and political party affiliation.
+First of all, I explored the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seemed to suggest that a relationship existed between socioeconomic class and political party affiliation.
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
 
 To find out whether this relationship happened by chance, I performed a chi-squared test using the computational approach (see extract of code below), with the following hypotheses:
