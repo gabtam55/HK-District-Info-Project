@@ -36,7 +36,7 @@ Finally, I calculated the p-value and visualised it under the null t-distributio
 null_distribution_t %>%
   get_p_value(obs_stat = obs_t, direction = "both")
 ```
-<img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_t_distribution.png" alt="Null T-distribution" height="350" />
+<img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_distribution_t2.png" alt="Null T-distribution" height="350" />
 
 As the p-value is smaller than 0.05, I failed to reject the null hypothesis. Afterall, which hand people use their smartphones with didn't seem to have an impact on their levels of extraversion.
 
