@@ -65,7 +65,7 @@ pairwise.t.test(dsuq$Extraversion, dsuq$X18..I.usually.use.my.smartphone.with, p
 
 As I failed to reject the null hypothesis. The one-way ANOVA suggested that people's preferred hand to use their smartphones with has nothing to do with their levels of extraversion.
 
-### Link to the Beryl et al.'s study
+### References
 Noë, B., Turner, L., Linden, D., Allen, S., Maio, G., Whitaker, R. (2017). Mood sampling on smartphones. [data collection]. UK Data Service. SN: 852732, http://doi.org/10.5255/UKDA-SN-852732
 
 
