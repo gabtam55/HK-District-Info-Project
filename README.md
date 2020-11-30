@@ -2,12 +2,13 @@
 A place for my R learnings using open data and participating in the <a href="https://github.com/Hong-Kong-Districts-Info">Hong Kong Districts Info Project</a>.
 
 ## 30th November 2020 - T-test and ANOVA (Using {infer})
-In 2017, Beryl et al. publish the data they collected as part of their 'Mood sampling on smartphones' project. I would like to ask a silly question by looking at the responses on the Smartphone Use Questionnaire and the Big Five Inventory (BFI).
+In 2017, Beryl et al. published the data that they collected for their 'Mood sampling on smartphones' project. I wanted to ask a silly question by looking at their participants' responses on the Smartphone Use Questionnaire and the Big Five Inventory.
 
-So here is my question:
+### Independent sample t-test
+So here was my question:
 >Does people's levels of extroversion depend on the hand (e.g. one hand, two hands) they use their smartphones with?
 
-My hypotheses are:
+My hypotheses were as follow:
 * Null hypothesis: Individuals' extroversion is independent on the hand they use their smartphones with
 * Alternative hypothesis: Individuals' extroversion is dependent on the hand they use their smartphones with
 
@@ -37,17 +38,20 @@ null_distribution_t %>%
 ```
 <img src="https://github.com/gabtam55/Practices/blob/master/301120%20-%20Hypothesis%20testing%20(T-test%20and%20ANOVA)/null_distribution_t.png" alt="Null T-Distribution" height="350" />
 
-As the p-value is smaller than 0.05, we fail to reject the null hypothesis. Afterall, which hand people use their smartphones with doesn't seem to have a relationship with their levels of extraversion.
+As the p-value is smaller than 0.05, I failed to reject the null hypothesis. Afterall, which hand people use their smartphones with didn't seem to have an impact on their levels of extraversion.
+
+### Independent sample t-test
+I don't wan
 
 ## 18th November 2020 - Chi-squared Test (Using {infer})
 >The General Social Survey (GSS) is a sociological survey created and regularly collected since 1972 by the National Opinion Research Center at the University of Chicago. It is funded by the National Science Foundation. The GSS collects information and keeps a historical record of the concerns, experiences, attitudes, and practices of residents of the United States. (<a href="https://en.wikipedia.org/wiki/General_Social_Survey">Wikipedia, 2020</a>)
 
-Using the results from the GSS conducted since 2000, I would like to look at the relationship between socioeconomic class and political party affiliation.
+Using the results from the GSS conducted since 2000, I wanted to look at the relationship between socioeconomic class and political party affiliation.
 
-First of all, we can explore the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seems to suggest that a relationship exists between socioeconomic class and political party affiliation.
+First of all, I explored the data with a bar plot. The biggest supporter for the democratic party was the working class, whereas the biggest supporter for the republican party was the middle class. It seemed to suggest that a relationship exists between socioeconomic class and political party affiliation.
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Socioeconomic%20class%20by%20political%20party%20affilliation.png?raw=true" alt="Socioeconomic class by political party affilitation" height="350" />
 
-To find out whether this relationship happened by chance, we can perform a chi-squared test using the computational approach (see extract of code below). My hypotheses are:
+To find out whether this relationship happened by chance, I performed a chi-squared test using the computational approach (see extract of code below), with the following hypotheses:
 * Null hypothesis: The socioeconomic class of US residents is independent of their political party affiliations.
 * Alternative hypothesis: The socioeconomic class of US residents is dependent on their political party affiliations.
 
@@ -56,7 +60,7 @@ To find out whether this relationship happened by chance, we can perform a chi-s
 The results indicated a p-value of 0.016. The density plot below shows the proportion of chi-squares from the null distribution that are larger than the observed chi-square (where the red line is).
 <img src="https://github.com/gabtam55/Practices/blob/master/181120%20-%20Hypothesis%20Testing%20(Chi-squared%20Test)/Null%20distribution%20of%20chi-squared%20distances.png?raw=true" alt="null distribution" height="350" />
 
-As p-value is smaller than 0.05, we reject the null hypothesis. We are in favor of the alternative hypothesis that socioeconomic class of US residents is dependent on their political party affiliations.
+As p-value was smaller than 0.05, I rejected the null hypothesis and was in favor of the alternative hypothesis that socioeconomic class of US residents is dependent on their political party affiliations.
 
 ## 28th October 2020 - Hypothesis Testing On A Single Proportion (Using {infer})
 <img src="https://github.com/gabtam55/Practices/blob/master/281020%20-%20Hypothesis%20Testing%20(Single%20Proportion)/code.png?raw=true" alt="HypoTestOneProp" height="500" />
